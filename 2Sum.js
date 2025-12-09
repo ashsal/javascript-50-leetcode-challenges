@@ -24,6 +24,8 @@ var twoSum = function (nums, target) {
 
     map.set(nums[i], i);
   }
+
+  return [-1, -1];
 };
 
 console.log([2, 7, 11, 15], 9, twoSum([2, 7, 11, 15], 9));

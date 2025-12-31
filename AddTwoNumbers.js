@@ -1,14 +1,3 @@
-function ListNode(val, next = null) {
-  this.val = val;
-  this.next = next;
-}
-
-// l1 = 2 → 4 → 3
-const l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-
-// l2 = 5 → 6 → 4
-const l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-
 var addTwoNumbers = function (l1, l2) {
   //console.log(l1);
   //console.log(l2);
@@ -20,8 +9,8 @@ var addTwoNumbers = function (l1, l2) {
   while (currentL1 != null || currentL2 != null || carry > 0) {
     let firstNumber = currentL1?.val ?? 0;
     let secondNumber = currentL2?.val ?? 0;
-    let sum = firstNumber + secondNumber + carry;
 
+    let sum = firstNumber + secondNumber + carry;
     let currentDigit = sum % 10;
     carry = Math.floor(sum / 10);
 
@@ -45,5 +34,16 @@ var addTwoNumbers = function (l1, l2) {
 
   return resultStartingNode;
 };
+
+function ListNode(val, next = null) {
+  this.val = val;
+  this.next = next;
+}
+
+// l1 = 2 → 4 → 3
+const l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+
+// l2 = 5 → 6 → 4
+const l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
 console.log(addTwoNumbers(l1, l2));
